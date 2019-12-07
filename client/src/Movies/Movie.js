@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
 import MovieCard from "./MovieCard";
 const Movie = props => {
   const [movie, setMovie] = useState();
@@ -29,7 +28,7 @@ const Movie = props => {
   if (!movie) {
     return <div>Loading movie information...</div>;
   }
-
+// eslint-disable-next-line
   const { title, director, metascore, stars } = movie;
   return (
     <div className="save-wrapper">
@@ -37,7 +36,6 @@ const Movie = props => {
       <div className="save-button" onClick={saveMovie}>
         Save
       </div>
-      {/*  this requires adding addToSavedList={addToSavedList} in route -- still dont get it yet */}
     </div>
   );
 };
